@@ -109,30 +109,6 @@ module.exports = function (grunt) {
                     }
                 ]
             },
-            bower: {
-                files: [
-                    {
-                        src: 'dist/fotorama.css',
-                        dest: '.fotorama-bower/fotorama.css'
-                    },
-                    {
-                        src: 'dist/fotorama.png',
-                        dest: '.fotorama-bower/fotorama.png'
-                    },
-                    {
-                        src: 'dist/fotorama@2x.png',
-                        dest: '.fotorama-bower/fotorama@2x.png'
-                    },
-                    {
-                        src: 'dist/fotorama.js',
-                        dest: '.fotorama-bower/fotorama.js'
-                    },
-                    {
-                        src: 'dist/example.html',
-                        dest: '.fotorama-bower/example.html'
-                    }
-                ]
-            },
             npm: {
                 files: [
                     {
@@ -276,13 +252,12 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-replace');
     grunt.loadNpmTasks('grunt-contrib-jasmine');
-    grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-compress');
 
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-shell');
 
-    var defaultTask = 'copy:i sass autoprefixer jst replace:jst concat:js replace:console concat:css uglify cssmin jasmine clean copy:example compress';
+    var defaultTask = 'copy:i sass autoprefixer jst replace:jst concat:js replace:console concat:css uglify cssmin copy:example';
 
 // Compile
     grunt.registerTask('default', defaultTask.split(' '));

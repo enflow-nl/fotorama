@@ -17,7 +17,7 @@ Test that Grunt’s CLI is installed by running `grunt --version`.  If the comma
 
 Hack on by running `grunt watch` and editing files in the `src/` subdirectory.
 
-The built version of Fotorama will be put in the `out/`.
+The built version of Fotorama will be put in the `dist/`.
 
 ## Submitting pull requests
 1. Create a new branch, please don’t work in your `master` branch directly.
