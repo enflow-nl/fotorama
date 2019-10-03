@@ -560,6 +560,15 @@ jQuery.Fotorama = function ($fotorama, opts) {
       }
 
       frameData.state = '';
+
+      // https://github.com/artpolikarpov/fotorama/pull/534/files
+      if ( frameData.data.hasOwnProperty('alt') ) {
+        img.alt= frameData.data.alt;
+      }
+      if ( frameData.data.hasOwnProperty('title') ) {
+        img.title= frameData.data.title;
+      }
+
       img.src = src;
     });
   }

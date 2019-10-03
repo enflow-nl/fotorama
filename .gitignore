@@ -17,3 +17,4 @@ src/templates/compiled.js
 _SpecRunner.html
 history.json
 .*
+umd

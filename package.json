@@ -1,10 +1,13 @@
 {
-  "name": "Fotorama",
-  "version": "4.6.4",
+  "name": "@enflow/fotorama",
+  "version": "4.7.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/artpolikarpov/fotorama.git"
+    "url": "https://github.com/enflow-nl/fotorama.git"
   },
+  "files": [
+    "dist/"
+  ],
   "devDependencies": {
     "grunt": "~0.4.5",
     "grunt-contrib-cssmin": "~0.10.0",

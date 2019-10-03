@@ -1,5 +1,8 @@
 # Fotorama source
 
+Fork by Enflow. Changes:
+- Add's support for alt/title data attributes on the images
+
 There is nothing for non-coders. Take the latest and ready-to-use Fotorama on its website:<br>
 > **http://fotorama.io/set-up**
 
