@@ -112,6 +112,10 @@ module.exports = function (grunt) {
             npm: {
                 files: [
                     {
+                        src: 'package.json',
+                        dest: '.fotorama-npm/package.json'
+                    },
+                    {
                         src: 'dist/fotorama.css',
                         dest: '.fotorama-npm/fotorama.css'
                     },
@@ -193,7 +197,6 @@ module.exports = function (grunt) {
             },
             version: {
                 files: {
-                    'fotorama.jquery.json': 'fotorama.jquery.json',
                     '.fotorama-npm/package.json': '.fotorama-npm/package.json'
                 },
                 options: {
@@ -227,15 +230,8 @@ module.exports = function (grunt) {
             indexes: {
                 command: './test/index.sh'
             },
-            commit: {
-                command: 'git commit fotorama.jquery.json -m \'Tagging the <%= pkg.version %> release\''
-            },
-            push: {
-                command: 'git push --tags --progress origin master:master'
-            },
             npm: {
-                command: 'cd .fotorama-npm ' +
-                    '&& npm publish'
+                command: 'cd .fotorama-npm && npm publish'
             }
         },
 
@@ -259,9 +255,9 @@ module.exports = function (grunt) {
 
     var defaultTask = 'copy:i sass autoprefixer jst replace:jst concat:js replace:console concat:css uglify cssmin copy:example';
 
-// Compile
+    // Compile
     grunt.registerTask('default', defaultTask.split(' '));
 
-// Publish, will fail without secret details ;-)
-    grunt.registerTask('publish', (defaultTask + ' replace:version copy:npm shell:commit shell:push shell:npm').split(' '));
+    // Publish, will fail without secret details ;-)
+    grunt.registerTask('publish', (defaultTask + ' replace:version copy:npm shell:npm').split(' '));
 };
